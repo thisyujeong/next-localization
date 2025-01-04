@@ -1,3 +1,4 @@
+import Button from '@/components/Button/Button';
 import styles from './page.module.scss';
 import { translation } from '@/utils/localization/server';
 import { LocaleTypes } from '@/utils/localization/setting';
@@ -15,8 +16,7 @@ export default async function Home({ params: { locale } }: PageProps) {
         <h1>{t('hello')}</h1>
         <div className={styles.ctas}>
           <h1></h1>
-          <button className={styles.primary}>Deploy now</button>
-          <button className={styles.secondary}>Read our docs</button>
+          <Button />
         </div>
       </main>
     </div>
