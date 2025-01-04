@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import { initReactI18next, useTranslation as useTransAlias } from 'react-i18next';
 import { getOptions, locales, type LocaleTypes } from './setting';
@@ -22,8 +24,9 @@ i18next
     preload: runsOnServerSide ? locales : [],
   });
 
-export function useTranslation(lng: LocaleTypes, ns: string) {
-  const translator = useTransAlias(ns);
+export function useTranslation(lng: LocaleTypes, ns: string | string[]) {
+  const namespaceArray = Array.isArray(ns) ? ns : [ns]; // 배열로 통일
+  const translator = useTransAlias(namespaceArray);
   const { i18n } = translator;
 
   if (runsOnServerSide && lng) {

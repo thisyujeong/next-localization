@@ -5,7 +5,10 @@ export const locales = [fallbackLng, 'ko'] as const;
 export type LocaleTypes = (typeof locales)[number];
 export const defaultNS = 'common';
 
-export function getOptions(lang = fallbackLng, ns = defaultNS): InitOptions {
+export function getOptions(
+  lang = fallbackLng,
+  ns: string | string[] = defaultNS
+): InitOptions {
   return {
     // debug: true, // Set to true to see console logs
     supportedLngs: locales,

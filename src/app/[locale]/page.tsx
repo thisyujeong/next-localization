@@ -8,16 +8,13 @@ interface PageProps {
 }
 
 export default async function Home({ params: { locale } }: PageProps) {
-  const { t } = await translation(locale, 'common');
+  const { t } = await translation(locale, ['about', 'common']);
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <h1>{t('hello')}</h1>
-        <div className={styles.ctas}>
-          <h1></h1>
-          <Button />
-        </div>
+        <p>{t('about:description')}</p>
       </main>
     </div>
   );
