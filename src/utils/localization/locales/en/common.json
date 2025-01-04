@@ -1,4 +1,6 @@
 {
   "hello": "Hello!",
-  "change_lang": "Change Language"
+  "change_lang": "Change Language",
+  "ko": "Korean",
+  "en": "English"
 }

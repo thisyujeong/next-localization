@@ -1,5 +1,6 @@
 .page {
-  --gray-rgb: 0, 0, 0;
+  --gray-rgb: 48, 65, 95;
+  --gray-alpha-300: rgba(var(--gray-rgb), 0.28);
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
@@ -16,21 +17,11 @@
   font-family: var(--font-geist-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  gap: 16px;
   grid-row-start: 2;
 }
 
@@ -58,38 +49,4 @@
   padding: 2px 4px;
   border-radius: 4px;
   font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas button {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-button.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-button.secondary {
-  background-color: var(--background);
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
 }
